@@ -1,0 +1,174 @@
+<button
+  type="button"
+  webc:root
+  webc:keep
+  :size="size"
+  :variant="variant"
+  :icon-only="icon-only"
+>
+  <slot name="prefix-icon"></slot>
+  <span class="label">
+    <slot></slot>
+  </span>
+  <slot name="suffix-icon"></slot>
+</button>
+
+<style webc:scoped>
+  :host {
+    appearance: none;
+    border: none;
+
+    display: flex;
+    align-items: center;
+    gap: var(--space-0-5);
+
+    border-radius: var(--radii-sm);
+
+    font-weight: 700;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition-property: background-color, color, border;
+    transition-duration: 300ms;
+    transition-timing-function: ease;
+  }
+
+  /*
+   * SIZES
+   */
+
+  /* Small */
+  :host[size="sm"] {
+    font-size: var(--label-sm);
+    padding: var(--space-0-75);
+  }
+
+  /* Medium */
+  :host[size="md"] {
+    font-size: var(--label-xl);
+    padding: var(--space-1);
+  }
+
+  /*
+   * VARIANTS
+   */
+
+  /* Primary */
+  :host[variant="primary"] {
+    background-color: var(--action-primary-enabled);
+    color: var(--primary-on);
+  }
+
+  :host[variant="primary"]:is(:disabled, [disabled]) {
+    background-color: var(--action-primary-disabled);
+    cursor: not-allowed;
+  }
+
+  :host[variant="primary"]:hover {
+    background-color: var(--action-primary-hovered);
+  }
+
+  :host[variant="primary"]:focus-visible {
+    background-color: var(--action-primary-hovered);
+    outline: var(--outline);
+  }
+
+  :host[variant="primary"]:active {
+    background-color: var(--action-primary-pressed);
+  }
+
+  /* Outline */
+  :host[variant="outline"] {
+    background-color: var(--surface-primary-default);
+    color: var(--action-primary-enabled);
+    border: 2px solid; /* Border color is set by text color */
+  }
+
+  :host[variant="outline"]:is(:disabled, [disabled]) {
+    color: var(--action-primary-disabled);
+    cursor: not-allowed;
+  }
+
+  :host[variant="outline"]:hover {
+    background-color: var(--action-primary-muted);
+    color: var(--action-primary-hovered);
+  }
+
+  :host[variant="outline"]:focus-visible {
+    background-color: var(--action-primary-muted);
+    color: var(--action-primary-hovered);
+    outline: var(--outline);
+  }
+
+  :host[variant="outline"]:active {
+    background-color: var(--action-primary-muted);
+    color: var(--action-primary-pressed);
+  }
+
+  /* Ghost */
+  :host[variant="ghost"] {
+    background-color: var(--surface-primary-default);
+    color: var(--action-primary-enabled);
+  }
+
+  :host[variant="ghost"]:is(:disabled, [disabled]) {
+    color: var(--action-primary-disabled);
+    cursor: not-allowed;
+  }
+
+  :host[variant="ghost"]:hover {
+    background-color: var(--action-primary-muted);
+    color: var(--action-primary-hovered);
+  }
+
+  :host[variant="ghost"]:focus-visible {
+    background-color: var(--action-primary-muted);
+    outline: var(--outline);
+  }
+
+  :host[variant="ghost"]:active {
+    background-color: var(--action-primary-muted);
+    color: var(--action-primary-pressed);
+  }
+
+  /* Text */
+  :host[variant="text"] {
+    display: inline-flex;
+    padding: 0;
+    background-color: unset;
+    color: var(--action-primary-enabled);
+    text-decoration: underline;
+  }
+
+  :host[variant="text"]:is(:disabled, [disabled]) {
+    color: var(--action-primary-disabled);
+    cursor: not-allowed;
+  }
+
+  :host[variant="text"]:hover {
+    color: var(--action-primary-hovered);
+    text-decoration: none;
+  }
+
+  :host[variant="text"]:focus-visible {
+    color: var(--action-primary-hovered);
+    outline: var(--outline);
+  }
+
+  :host[variant="text"]:active {
+    color: var(--action-primary-pressed);
+  }
+
+  /* Icon only */
+  :host[icon-only] .label {
+    /* https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html */
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+</style>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebC</title>
+    <style>
+      :root {
+        --space-0-5: 0.5rem;
+        --space-0-75: 0.75rem;
+        --space-1: 1rem;
+
+        --radii-sm: 2px;
+
+        --label-sm: 1rem;
+        --label-xl: 1.125rem;
+
+        --surface-primary-default: #fdfdfd;
+
+        --action-primary-enabled: #4538dd;
+        --action-primary-disabled: #e8ebee;
+        --action-primary-hovered: #372db1;
+        --action-primary-pressed: #292284;
+        --action-primary-muted: #ecebfc;
+
+        --primary-on: #ffffff;
+
+        --outline: 2px solid #68ade7;
+      }
+    </style>
+  </head>
+  <body @html="this.content"></body>
+</html>

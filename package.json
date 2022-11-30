@@ -1,0 +1,23 @@
+{
+  "name": "webc-component-library",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.0-canary.18",
+    "@11ty/eleventy-plugin-webc": "^0.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@storybook/addon-actions": "^6.5.13",
+    "@storybook/addon-essentials": "^6.5.13",
+    "@storybook/addon-links": "^6.5.13",
+    "@storybook/html": "^6.5.13",
+    "babel-loader": "^8.3.0"
+  }
+}

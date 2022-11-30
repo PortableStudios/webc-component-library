@@ -1,0 +1,11 @@
+<input :type="type" webc:root webc:keep />
+
+<style webc:scoped>
+  :host {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    line-height: 1;
+    border: 2px solid;
+  }
+</style>
